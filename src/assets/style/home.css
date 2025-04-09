@@ -1,22 +1,17 @@
-section#home {
-    background-image: url(../image/florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center; 
-
-    width: 100%;
-    height: 100vh;
-    
-    }
-
+/* Efeito base do céu estrelado */
+#home {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+  }
+  
+  
 section#home h1 {
-    font-size: 6rem;
+    font-size: 2rem;
     text-align: left;
 }
 
 
 section#home span#subtitle {
-    margin-right: 8rem;
+    margin-right: 2rem;
     font-size: 1.5rem;
 }
