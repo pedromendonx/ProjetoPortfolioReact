@@ -5,4 +5,23 @@ html, body, #root {
   padding: 0;
   display: block; /* Remove qualquer flexbox indesejado */
   overflow-x: hidden; /* Evita barras de rolagem laterais */
+  scrollbar-width: thin;
+  scrollbar-color: black;
+  font-family: cursive;
 }
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+
