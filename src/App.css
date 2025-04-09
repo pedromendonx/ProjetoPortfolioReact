@@ -7,7 +7,7 @@ html, body, #root {
   overflow-x: hidden; /* Evita barras de rolagem laterais */
   scrollbar-width: thin;
   scrollbar-color: black;
-  font-family: cursive;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *::-webkit-scrollbar {
