@@ -14,7 +14,7 @@ function Projects (params) {
           <h2> Projetos </h2>
   
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 col-12">
               <h3 className="cv-title mt-4">Minhas Experiências</h3>
   
               <div className='cv-item' data-anime="up">
@@ -26,8 +26,9 @@ function Projects (params) {
               </div>
   
             </div>
-            <div className="col-md-6">
-              <div className="container d-flex justify-content-end mb-4 mt-4">
+
+            <div className="col-md-6 col-12">
+              <div className="container d-flex justify-content-md-end justify-content-center mb-4 mt-4">
                 <div id="carouselExampleCaptions" className="carousel slide carousel shadow">
                   <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active"
