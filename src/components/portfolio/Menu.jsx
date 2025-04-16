@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../assets/style/menu.css';
+import '../../assets/style/home.css'
 
 function Menu() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -10,9 +11,19 @@ function Menu() {
     if(darkMode) {
       document.documentElement.setAttribute('data-bs-theme', 'dark');
       document.body.classList.add('bg-black');
+
+      const images = document.getElementsByClassName('img-size');
+      Array.from(images).forEach(image => {
+        image.style.filter = 'invert(0)';
+      });
     } else {
       document.documentElement.setAttribute('data-bs-theme', 'light');
       document.body.classList.remove('bg-black');
+
+      const images = document.getElementsByClassName('img-size');
+      Array.from(images).forEach(image => {
+        image.style.filter = 'invert(1)';
+      });
     }
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
