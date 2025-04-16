@@ -1,10 +1,11 @@
 /* Efeito base do céu estrelado */
 #home {
+    position: relative;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     overflow: hidden;
-  }
-  
-  
+    /* Mantém as estrelas limitadas à section */
+}
+
 section#home h1 {
     font-size: 2rem;
     text-align: left;
