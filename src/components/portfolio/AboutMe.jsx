@@ -5,6 +5,7 @@ function AboutMe() {
 
     const navigate = useNavigate();
 
+
     return (
         <main className="bg-dark text-white min-vh-100 py-5">
             <div>

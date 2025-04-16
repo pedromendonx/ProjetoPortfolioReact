@@ -10,6 +10,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css'
 import AboutMe from './components/portfolio/AboutMe.jsx';
 
+
 function AppContent() {
   const location = useLocation();
 
@@ -27,7 +28,7 @@ function AppContent() {
       )}
 
       <Routes>
-        <Route path="/AboutMe" element={<AboutMe />} />
+        <Route path="/AboutMe" element={<><AboutMe /></>} />
       </Routes>
     </>
   );

@@ -2,6 +2,7 @@ import Me from "../../assets/image/Me.jpg";
 import "../../assets/style/about.css";
 
 import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 
@@ -9,11 +10,14 @@ function About(params) {
 
   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
-    // Redireciona para a página /another
-    navigate('/AboutMe');
-  };
+  
 
+  const handleButtonClick = () => {
+    navigate('/AboutMe');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    }, 0); 
+  };
   return (
     <section className="mt-5" id="about">
       <div className="container">
