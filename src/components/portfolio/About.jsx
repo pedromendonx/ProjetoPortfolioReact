@@ -2,15 +2,21 @@ import Me from "../../assets/image/Me.jpg";
 import "../../assets/style/about.css";
 
 import React from 'react';
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function About(params) {
 
+  const navigate = useNavigate();
 
-const handleButtonClick = () => {
-  window.location.href = '/AboutMe'; 
-};
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}, []);
+
+  const handleButtonClick = () => {
+    navigate('/AboutMe');
+  };
 
   return (
     <section className="mt-5" id="about">
