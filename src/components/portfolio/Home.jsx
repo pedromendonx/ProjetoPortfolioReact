@@ -7,8 +7,6 @@ import GithubImg from "../../assets/image/github.png"
 import StarrySky from "./StarrySky";
 
 function Home() {
-
-
   return (
     <main>
       <section id="home" className="row m-0 p-0 container-fluid min-vh-100 position-relative starry-section">

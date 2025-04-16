@@ -1,8 +1,19 @@
 import Me from "../../assets/image/Me.jpg";
 import "../../assets/style/about.css";
 
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function About(params) {
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    // Redireciona para a página /another
+    navigate('/AboutMe');
+  };
+
   return (
     <section className="mt-5" id="about">
       <div className="container">
@@ -27,7 +38,7 @@ function About(params) {
             </p>
 
             <div class="d-grid gap-2 col-12">
-              <button class="btn btn-primary mb-4" type="button">Saiba mais</button>
+              <button onClick={handleButtonClick} class="btn btn-primary mb-4" type="button">Saiba mais</button>
             </div>
 
 
