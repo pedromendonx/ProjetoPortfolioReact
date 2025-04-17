@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Menu from '../src/components/portfolio/Menu.jsx';
 import Home from '../src/components/portfolio/Home.jsx';
 import About from '../src/components/portfolio/About.jsx';
@@ -9,6 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css'
 import AboutMe from './components/portfolio/AboutMe.jsx';
+import Footer from './components/portfolio/footer.jsx';
 
 function ScrollManager() {
   const { pathname } = useLocation();
@@ -32,18 +33,36 @@ function ScrollManager() {
 function AppContent() {
   const location = useLocation();
 
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('darkMode') === 'true';
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+      document.body.classList.add('bg-black');
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', 'light');
+      document.body.classList.remove('bg-black');
+    }
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
+
   return (
     <>
       <ScrollManager />
       
-      {location.pathname !== "/AboutMe" && <Menu />}
+      {location.pathname !== "/AboutMe" && (
+        <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
+      )}
 
       <Routes>
         <Route path="/" element={
           <>
             <Home />
             <About />
-            <Projects />
+            <Projects darkMode={darkMode} />
+            <Footer />
           </>
         } />
         <Route path="/AboutMe" element={<AboutMe />} />

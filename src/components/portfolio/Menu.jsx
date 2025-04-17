@@ -1,37 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-scroll';
 import '../../assets/style/menu.css';
 import '../../assets/style/home.css'
 
-function Menu() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('darkMode') === 'true';
-  });
-
-  useEffect(() => {
-    if(darkMode) {
-      document.documentElement.setAttribute('data-bs-theme', 'dark');
-      document.body.classList.add('bg-black');
-
-      const images = document.getElementsByClassName('img-size');
-      Array.from(images).forEach(image => {
-        image.style.filter = 'invert(0)';
-      });
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', 'light');
-      document.body.classList.remove('bg-black');
-
-      const images = document.getElementsByClassName('img-size');
-      Array.from(images).forEach(image => {
-        image.style.filter = 'invert(1)';
-      });
-    }
-    localStorage.setItem('darkMode', darkMode);
-  }, [darkMode]);
+function Menu({ darkMode, setDarkMode }) {
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(prev => !prev);
   };
 
+
+ 
   return (
     <nav className={`navbar navbar-expand-lg fixed-top ${darkMode ? 'navbar-dark bg-black' : 'navbar-light bg-light'}`}>
       <div className="container-fluid">
@@ -56,24 +35,48 @@ function Menu() {
 
 
         <div className="collapse navbar-collapse" id="navbarContent">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item px-5">
-              <a className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`} href="#about">
+              <Link 
+                to="about" 
+                spy={true} 
+                smooth={true} 
+                offset={-70} 
+                duration={500} 
+                className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`}
+                style={{ cursor: 'pointer' }}
+              >
                 Sobre mim
-              </a>
+              </Link>
             </li>
             <li className="nav-item px-5">
-              <a className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`} href="#projetos">
+              <Link 
+                to="projetos" 
+                spy={true} 
+                smooth={true} 
+                offset={-70} 
+                duration={500} 
+                className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`}
+                style={{ cursor: 'pointer' }}
+              >
                 Projetos
-              </a>
+              </Link>
             </li>
             <li className="nav-item px-5">
-              <a className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`} href="#">
+              <Link 
+                to="contatos" 
+                spy={true} 
+                smooth={true} 
+                offset={-70} 
+                duration={500} 
+                className={`nav-link ${darkMode ? 'text-white' : 'text-dark'}`}
+                style={{ cursor: 'pointer' }}
+              >
                 Contatos
-              </a>
+              </Link>
             </li>
           </ul>
-          
+
 
           <button 
             className="btn btn-link d-none d-lg-block" 
