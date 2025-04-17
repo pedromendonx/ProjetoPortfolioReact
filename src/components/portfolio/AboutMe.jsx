@@ -12,14 +12,14 @@ function AboutMe() {
         window.scrollTo({ top: 0, behavior: 'instant' });
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
-        
+
         // Adiciona um timeout como fallback
         const timer = setTimeout(() => {
-          window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
         }, 50);
-        
+
         return () => clearTimeout(timer);
-      }, []);
+    }, []);
 
     return (
         <main className="bg-dark text-white min-vh-100 py-5">
@@ -64,6 +64,12 @@ function AboutMe() {
                             Esta vitrine online — construída do zero — apresenta meus projetos, habilidades e trajetória, focando em performance, conteúdo dinâmico e experiência de usuário agradável.
                         </p>
                     </li>
+                    <li className="mb-4">
+                        <h4 className="text-info">Resumo da Experiência</h4>
+                        <p>
+                            Durante meu curso técnico, construí uma boa base em desenvolvimento web. Fora dele, participei de dois projetos importantes: um com a ONG OASA, desenvolvendo o site da organização, e outro criando meu portfólio pessoal. Também desenvolvi um site de receitas como parte de um projeto escolar. Cada um desses trabalhos me ajudou a crescer e aprender mais sobre a área.
+                        </p>
+                    </li>
                 </ul>
 
                 <p className="mt-5">Sou um desenvolvedor front‑end com sólida base em back‑end, sempre focado em criar experiências web eficientes e envolventes. Minhas principais competências incluem:</p>
@@ -87,8 +93,8 @@ function AboutMe() {
             </div>
 
             <button onClick={() => navigate(-1)} className="btn btn-secondary d-grid gap-2 col-md-4 col-6 mx-auto">
-                     Voltar para página inicial
-                </button>
+                Voltar para página inicial
+            </button>
         </main>
     );
 }

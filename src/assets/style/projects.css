@@ -1,13 +1,29 @@
-.carousel {
-    max-width: 18rem !important; /* Mesmo tamanho do card */
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10% !important; 
-    top: 50% !important; 
-    transform: translateY(-50%) !important; 
-    height: auto !important; 
-    filter: invert(1) !important;
-  }
+.card {
+  min-height: 100%; /* Garante altura mínima uniforme */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}

@@ -1,0 +1,9 @@
+footer a {
+    transition: transform 0.2s ease;
+  }
+  
+  footer a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  
