@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
 import StarrySky from "./StarrySky";
 
 
@@ -6,6 +7,19 @@ function AboutMe() {
 
     const navigate = useNavigate();
 
+    useLayoutEffect(() => {
+        // Força o scroll de três maneiras diferentes
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Adiciona um timeout como fallback
+        const timer = setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 50);
+        
+        return () => clearTimeout(timer);
+      }, []);
 
     return (
         <main className="bg-dark text-white min-vh-100 py-5">

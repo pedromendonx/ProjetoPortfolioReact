@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect } from 'react';
 import Menu from '../src/components/portfolio/Menu.jsx';
 import Home from '../src/components/portfolio/Home.jsx';
 import About from '../src/components/portfolio/About.jsx';
@@ -10,38 +10,54 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css'
 import AboutMe from './components/portfolio/AboutMe.jsx';
 
+function ScrollManager() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Solução mais agressiva para garantir o scroll
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 0);
+    
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, [pathname]);
+
+  return null;
+}
 
 function AppContent() {
   const location = useLocation();
 
   return (
     <>
-        {/* Menu só aparece se NÃO estiver em /AboutMe */}
-        {location.pathname !== "/AboutMe" && <Menu />}
-
-      {location.pathname === "/" && (
-        <>
-          <Home />
-          <About />
-          <Projects />
-        </>
-      )}
+      <ScrollManager />
+      
+      {location.pathname !== "/AboutMe" && <Menu />}
 
       <Routes>
-        <Route path="/AboutMe" element={<><AboutMe /></>} />
+        <Route path="/" element={
+          <>
+            <Home />
+            <About />
+            <Projects />
+          </>
+        } />
+        <Route path="/AboutMe" element={<AboutMe />} />
       </Routes>
     </>
   );
 }
 
-
 function App() {
-
   return (
     <Router>
       <AppContent />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
