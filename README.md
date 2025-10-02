@@ -6,7 +6,6 @@
 
 ## Imagens do projeto
 
-![Home do Portfólio](./assets/home-screenshot.png)  
 <img width="1326" height="825" alt="download" src="https://github.com/user-attachments/assets/51303658-7628-4c01-99d3-9d02ee0c474a" />
 
 ---
