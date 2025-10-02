@@ -33,6 +33,12 @@ Ele está hospedado em: [projeto‑portfolio-react-opal.vercel.app](https://proj
 
 ## Tecnologias utilizadas
 
+- React (Vite)
+- CSS Bootstrap
+- React Router
+- Deploy via Vercel
+- Git & GitHub para controle de versão
+  
 ---
 
 ## Contato
